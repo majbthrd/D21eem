@@ -187,7 +187,6 @@ void usb_eem_recv_callback(const uint8_t *data, int size)
     return;
 
   memcpy(received_frame->payload, data, size);
-  received_frame->len = size;
 }
 
 err_t output_fn(struct netif *netif, struct pbuf *p, const ip_addr_t *ipaddr)

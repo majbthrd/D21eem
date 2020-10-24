@@ -122,6 +122,7 @@ void usb_eem_xmit_packet(struct pbuf *p)
     memcpy(data, (char *)q->payload, q->len);
     data += q->len;
     packet_size += q->len;
+    if (q->tot_len == q->len) break;
   }
 
   struct cdc_eem_packet_header *hdr = (struct cdc_eem_packet_header *)transmitted;
